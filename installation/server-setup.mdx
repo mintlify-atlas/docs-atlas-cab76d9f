@@ -1,0 +1,78 @@
+---
+title: "Running a Dedicated GT New Horizons Server on Forge"
+description: "How to download, configure, and run a dedicated GT New Horizons server, including Java setup, RAM configuration, and server software recommendations."
+---
+
+Running a dedicated GT New Horizons server lets you play with friends on a persistent world. GTNH is a demanding pack, so server setup requires attention to Java version, memory allocation, and the correct server software. Following the steps below will get a stable server running with minimal configuration.
+
+<Warning>
+  Thermos, Ultramine, and other MCPC+ forks are not officially supported and may cause issues including crashes, item duplication, and broken recipes. Use Vanilla Forge or Crucible for a supported experience.
+</Warning>
+
+## Supported server software
+
+| Software | Support status | Notes |
+|---|---|---|
+| Vanilla Forge | **Recommended** | Official, fully supported, most stable |
+| Crucible | Supported | Fork of Forge with additional patches |
+| Thermos | Unsupported | MCPC+ fork; may cause unpredictable issues |
+| Ultramine | Unsupported | MCPC+ fork; not tested |
+| Other MCPC+ forks | Unsupported | Not tested |
+
+## Setting up a Vanilla Forge server
+
+<Steps>
+  <Step title="Download the server pack">
+    Go to [gtnewhorizons.com/downloads](https://www.gtnewhorizons.com/downloads/) and download the server pack for the version you want to run. Extract the archive to a dedicated folder on your machine.
+  </Step>
+  <Step title="Configure Java">
+    The server requires the same Java version as the client. Java 17 is recommended. Ensure the `java` command in your terminal points to the correct version, or update the launch script to use an absolute path to your Java 17 executable.
+
+    See [Java Requirements](/installation/java-requirements) for version details.
+  </Step>
+  <Step title="Set RAM in the launch script">
+    Open the `ServerStart.sh` (Linux/macOS) or `ServerStart.bat` (Windows) file included in the server pack. Locate the `-Xmx` and `-Xms` flags and update them:
+
+    ```bash ServerStart.sh
+    java -Xms4G -Xmx6G -jar forge-*.jar nogui
+    ```
+
+    A minimum of 4 GB (`-Xmx4G`) is required. 6 GB (`-Xmx6G`) is recommended for a stable experience with multiple players.
+  </Step>
+  <Step title="Run the server start script">
+    Execute the start script for your platform. On the first run, the server will generate the world and default configuration files, then stop. Accept the EULA by setting `eula=true` in `eula.txt`, then start the server again.
+
+    ```bash terminal
+    # Linux / macOS
+    chmod +x ServerStart.sh
+    ./ServerStart.sh
+    ```
+  </Step>
+  <Step title="Configure server settings">
+    Edit `server.properties` to adjust core settings such as the world name, difficulty, max player count, and whether online mode is enabled. The server also includes a `config/` directory with per-mod configuration files you can adjust as needed.
+  </Step>
+</Steps>
+
+## ServerUtilities configuration
+
+The pack includes [ServerUtilities](https://github.com/GTNewHorizons/ServerUtilities), which handles chunk claiming, team management, and scheduled backups. Its configuration files are located in the `serverutilities/` directory inside your server folder. Key files include:
+
+- `serverutilities/server.json` — global settings such as backup frequency and claim limits
+- `serverutilities/players/` — per-player data and claimed chunk records
+
+Review the settings in `server.json` before opening your server to players, especially the chunk claim and backup schedule settings.
+
+## Whitelist vs open access
+
+By default, GTNH servers run with `white-list=false` in `server.properties`, allowing anyone with the pack to join. To restrict access:
+
+- Set `white-list=true` in `server.properties`
+- Add player names with `/whitelist add <username>` while the server is running, or edit `whitelist.json` directly
+
+Many official community servers use whitelists and require an application before joining. See the [official servers list](https://www.gtnewhorizons.com/) for details.
+
+## Server hosting requirements
+
+<Tip>
+  GTNH servers benefit from fast single-core CPU performance rather than many cores, as Minecraft is largely single-threaded. A machine with at least 6 GB of dedicated RAM and an SSD for world storage is a reasonable baseline for 3–6 concurrent players.
+</Tip>

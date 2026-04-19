@@ -1,0 +1,63 @@
+---
+title: "How to Join a GTNH Multiplayer Server"
+description: "Connect to GT New Horizons multiplayer servers, including how whitelist applications work, version matching, and using the built-in server list."
+---
+
+GT New Horizons has an active multiplayer community with a range of servers to choose from — both official servers run by the GTNH team and dozens of community-run servers across multiple regions. Whether you prefer a tightly moderated whitelisted environment or a more open server, there is an option available to suit most playstyles.
+
+## Server types
+
+Not all GTNH servers use the same access model. Before trying to connect, check what type of server it is:
+
+1. **Open servers** — Anyone with the matching pack version can connect without prior approval.
+2. **Whitelisted servers** — You must apply and be accepted before the server will let you in. Attempting to connect before approval results in a "not whitelisted" error.
+3. **Greylist servers** — You can join with limited access (usually restricted to a spawn or starting area) and gain full access once whitelisted.
+
+## How to connect
+
+<Steps>
+  <Step title="Open Minecraft with GTNH installed">
+    Launch the pack through your modpack launcher (MultiMC, Prism, CurseForge, or ATLauncher). Do not use the vanilla launcher — the modpack must be loaded for the client to be compatible with GTNH servers.
+  </Step>
+  <Step title="Go to Multiplayer from the main menu">
+    On the main menu, click **Multiplayer**. GTNH includes a `DefaultServerList` mod that pre-populates this screen with known servers — many appear automatically without any manual entry.
+  </Step>
+  <Step title="Click Add Server">
+    To add a server that is not already listed, click **Add Server** at the bottom of the multiplayer screen.
+  </Step>
+  <Step title="Enter the server address">
+    Type the server's address (for example, `delta.gtnewhorizons.com`) in the **Server Address** field. Give it a recognizable name in the **Server Name** field if you like.
+  </Step>
+  <Step title="Click Done, then connect">
+    Click **Done** to save the entry. The server will appear in your list. Select it and click **Join Server** to connect.
+  </Step>
+</Steps>
+
+<Note>
+  Official GTNH servers run the latest stable release. Check Discord for the current required version.
+</Note>
+
+## Applying for whitelisted servers
+
+For whitelisted servers, connecting without an approved application will result in an immediate rejection. Check the specific server's website or Discord for their application process.
+
+For the official GTNH servers specifically:
+
+- Apply at [gtnewhorizons.com](https://www.gtnewhorizons.com/)
+- Or use the `!apply` command in the `#server-applications` channel of the [GTNH Discord](https://discord.gg/gtnh)
+
+After submitting an application, wait for confirmation before attempting to connect. Approval times vary by server and current queue length.
+
+## The pre-loaded server list
+
+GTNH ships with a `servers.json` file managed by the `DefaultServerList` mod. This file pre-populates your multiplayer screen with known official and community servers, so you do not need to manually enter addresses for most servers covered in these docs. The list reflects the servers active at the time of each pack release; newer community servers may need to be added manually.
+
+## Version matching
+
+You must use the exact same pack version as the server. The client and server negotiate versions on connection — a mismatch will prevent you from joining or, in some edge cases, cause world corruption.
+
+To find the current server version, check the server's Discord or the `#server-status` channel in the GTNH Discord. You can switch between installed pack versions through your launcher's profile manager without uninstalling your current setup.
+
+<Warning>
+  Using a different pack version than the server will cause connection errors or world corruption.
+</Warning>

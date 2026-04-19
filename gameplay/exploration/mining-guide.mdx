@@ -1,0 +1,122 @@
+---
+title: "Mining and Prospecting Guide for GTNH"
+description: "GregTech's ore vein system requires a completely different approach to mining — this guide covers how to find, track, and efficiently mine ore deposits."
+---
+
+Mining in GT New Horizons works nothing like vanilla Minecraft. GregTech removes all scattered ore generation and replaces it with a vein system: large, localised 3D clusters of ore concentrated in specific areas, spaced across the world at defined intervals. You will not find iron by randomly digging at Y=16 — you need to actively prospect for veins, understand their structure, and use the right tools to locate them efficiently. The system rewards methodical exploration far more than random tunnelling.
+
+## Understanding ore veins
+
+GregTech ore veins have a consistent structure:
+
+- Each vein occupies a roughly **3D cluster**, typically **32×32 blocks wide** and **8 or more blocks tall**
+- Every vein has a **primary ore** that makes up the majority of the deposit, a **secondary ore** mixed throughout, and often one or more **sporadic bonus ores**
+- Veins are spaced **roughly every 3 chunks** across the world, meaning there are gaps between them where you will find nothing
+- A single large vein, once found, can supply your base with that material for a long time
+
+Common overworld veins include iron/nickel, copper/tin, coal, gold, and various other GregTech-specific combinations. The exact mix of primary and secondary ore varies by vein type.
+
+<Tip>
+The questbook contains hints about which ore veins are needed for key progression steps and which dimensions they appear in. Consult it before spending hours searching for a specific material.
+</Tip>
+
+## Prospecting methods
+
+<AccordionGroup>
+  <Accordion title="Manual prospecting">
+    The most basic approach: mine horizontally at **Y=10 to Y=40** and watch for ore blocks. This is effective early in the game before you have prospecting tools, but it is slow. A few things make it more systematic:
+
+    - Mine long tunnels spaced 3 chunks apart to ensure you cross every vein zone without overlap
+    - When you find any ore block, stop and excavate outward — you are likely near the edge of a vein
+    - Keep notes or JourneyMap waypoints for every ore encounter so you can return once you have better tools
+  </Accordion>
+  <Accordion title="GregTech Prospector's Scanner">
+    Once you reach mid-game, the **GregTech Prospector's Scanner** can detect nearby ore veins. It reports the ore type and general direction of the nearest vein, significantly reducing the time spent tunnelling blind. Craft it as soon as it becomes available in your tier.
+  </Accordion>
+  <Accordion title="VisualProspecting">
+    **VisualProspecting** integrates directly with JourneyMap and records vein locations automatically. When you find a vein (or use the Prospector's Scanner), VisualProspecting logs the location and displays it on your map. Over time, you build a permanent record of every vein you have found or detected in the world.
+
+    This is the most powerful prospecting tool in GTNH for long-term play. Maintaining a well-annotated JourneyMap means you never need to re-prospect an area.
+  </Accordion>
+  <Accordion title="Surface ores as vein indicators">
+    Small ore deposits appear on the surface across the world. These **surface ores are not random** — they are indicators that a full underground vein exists beneath that chunk. If you see a small cluster of copper on the surface, dig straight down from that location and you are likely to find a copper vein.
+
+    Collecting surface ores during overworld exploration and noting their map position is one of the most efficient early-game prospecting strategies.
+  </Accordion>
+</AccordionGroup>
+
+## Dimension-specific ores
+
+Different dimensions contain different ore vein types. Some materials are exclusive to specific dimensions and cannot be obtained elsewhere.
+
+### Overworld
+
+The overworld contains the most common technology ores:
+
+- Iron, nickel (iron/nickel veins)
+- Copper, tin (copper/tin veins)
+- Coal, lignite (energy sources for early machines)
+- Gold and silver
+- Redstone, lapis
+- Various GregTech-specific ores (cassiterite, chalcopyrite, etc.)
+
+### Nether
+
+The Nether contains ores not found in the overworld, making Nether mining important from mid-game onward:
+
+- **Nether Quartz veins** — essential for circuits and early electronic components
+- **Sulfur** — required in chemical processing
+- Netherrack-hosted GregTech ores unique to the Nether environment
+
+### Moon
+
+Space introduces ore types that cannot be found anywhere on Earth:
+
+- **Ilmenite** — a titanium-iron mineral exclusive to the Moon and asteroids; critical for titanium processing
+- **Olivine** — used in various GregTech recipes
+- **Aluminium** — available in Moon-specific vein distributions
+
+### Mars
+
+Mars contains its own unique vein set:
+
+- **Tetrahedrite** — copper-antimony ore used in specific crafting chains
+- **Magnesium** — required for advanced materials processing
+- Additional unique ore types not found in the overworld or Moon
+
+Note: the Galacticraft config in GTNH explicitly disables vanilla Galacticraft ore generation for iron, copper, tin, and Desh on Mars. All ores on Mars come from GregTech veins.
+
+## Finding your first ore vein
+
+<Steps>
+  <Step title="Gather surface ores as you explore">
+    During your first few days, pick up every surface ore node you find. These give you starter materials and mark locations worth digging later. Place a JourneyMap waypoint at each one.
+  </Step>
+  <Step title="Build a basic mining setup">
+    Craft stone or iron pickaxes (or a GregTech bronze pickaxe if you are already using GregTech tools). You need something that can break ore blocks quickly. Torches and food are essential — mine entrances can extend deep.
+  </Step>
+  <Step title="Dig down near a surface ore indicator">
+    Pick one of your surface ore waypoints and dig straight down from it. You are targeting Y=10 to Y=40. Once you reach that range, branch horizontally in both directions and look for ore blocks in the walls or floor.
+  </Step>
+  <Step title="Excavate the vein fully">
+    When you find ore blocks, dig outward from the initial discovery. GregTech veins are large — follow the ore in all directions to expose the full deposit. The vein may span 32 blocks in each horizontal direction.
+  </Step>
+  <Step title="Log the location">
+    Mark the vein on JourneyMap with a descriptive waypoint (the ore type and Y-level). VisualProspecting will assist with this if installed. Document the primary and secondary ore types so you know what to return for.
+  </Step>
+  <Step title="Set up dedicated mining infrastructure">
+    Once the early game vein is exhausted or you need larger quantities, use a GregTech Mining Drill or BuildCraft Quarry to automate extraction. Position automated miners over known vein locations for efficient bulk mining.
+  </Step>
+</Steps>
+
+## Efficient mining at scale
+
+Once manual prospecting has located your key veins, automated tools dramatically increase efficiency:
+
+- **GregTech Mining Drill** — once you locate a vein, the GT Mining Drill can mine it automatically without you digging by hand
+- **BuildCraft Quarry** — for bulk extraction in a dedicated mining area; best used in a dimension or area you are willing to sacrifice aesthetically
+- **EnderIO mining tools** — mid-game automation options for targeted ore extraction
+
+<Warning>
+Mining in the Deep Dark (Extra Utilities) is extremely dangerous — permanent night means constant mob spawning with no safe zones. Bring your best armour, plenty of food, and light sources before attempting to mine there. The ore density is worth it, but only once you are prepared.
+</Warning>

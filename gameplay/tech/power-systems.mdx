@@ -1,0 +1,125 @@
+---
+title: "Power Generation in GregTech New Horizons"
+description: "EU power generation, storage, and distribution in GTNH, from bronze boilers and coal generators through large multiblock turbines and space-based solar arrays."
+---
+
+Power generation in GTNH begins with humble bronze boilers and eventually scales to plasma turbines running on exotic extraterrestrial fuels. Every tier of GregTech machinery demands increasingly large amounts of EU (Energy Units), and keeping machines supplied with clean, correctly-voltaged power is one of the central engineering challenges throughout the entire playthrough. Understanding how generation, cables, and transformers interact early on prevents painful and explosive mistakes later.
+
+<Warning>
+Machines explode if given too much voltage. Always match the machine tier to the power source — an LV machine receiving HV power will be destroyed. Use transformers to step voltage down before connecting lower-tier machines.
+</Warning>
+
+## Power generation methods
+
+<AccordionGroup>
+  <Accordion title="Steam power">
+    Steam is the first power source available and remains useful well into mid-game for steam-tier machines that consume steam directly rather than EU.
+
+    **Boilers** heat water into steam using solid fuel or lava:
+
+    - **Bronze Boiler (Small)** — earliest available, very low output, fuel-hungry
+    - **Bronze Boiler (Large)** — better fuel efficiency, higher steam output
+    - **Steel Boiler (Small / Large)** — significantly more efficient than bronze equivalents
+    - **High Pressure Boiler** — produces superheated steam at higher pressure
+
+    Steam machines (Bronze-tier Macerator, Furnace, Extractor, etc.) consume steam directly and are available before you reach LV electricity. They are slower than their electric equivalents but require no wiring.
+
+    Boilers take time to heat up and cool down. Cold-starting a boiler wastes fuel; keep them running continuously if possible.
+  </Accordion>
+
+  <Accordion title="Basic electric generation">
+    Once you have access to LV machines, dedicated electric generators replace steam for most tasks.
+
+    - **Coal Generator (LV)** — burns coal and charcoal for EU; low output but easy to fuel
+    - **Diesel Generator (LV–MV)** — burns liquid fuel for much higher EU/t output; requires oil refining infrastructure
+    - **Gas Turbine (LV–HV)** — burns gaseous fuels; efficient at higher tiers with refined gas
+    - **Steam Turbine (LV–MV)** — converts steam into EU; useful if you already have boiler infrastructure
+
+    Gas and diesel generators are the primary workhorses of early-to-mid electric power. They scale with tier, and higher-tier versions of the same generator consume more fuel but produce proportionally more power.
+  </Accordion>
+
+  <Accordion title="Solar panels">
+    Solar panels generate EU from sunlight with no fuel cost, but output is limited and they only work above ground with sky exposure during the day.
+
+    - **Basic Solar Panel** — tiny LV output; useful in the very early game for low-drain devices
+    - **Advanced Solar Panel** — higher output; from the Advanced Solar Panels mod
+    - **Hybrid / Ultimate / Quantum Solar Panels** — progressively higher tiers of solar generation
+    - **Solar Arrays** — large multiblock solar structures from the Advanced Solar Panels mod with significantly higher output
+
+    Solar panels scale poorly compared to turbines and are not a primary power source at high tiers. They are best used for passive charging of batteries or powering isolated outposts.
+  </Accordion>
+
+  <Accordion title="Nuclear power">
+    Nuclear reactors from IndustrialCraft 2 provide large bursts of EU from uranium fuel rods. GTNH includes the **Nuclear Control** mod for monitoring reactor status remotely.
+
+    - Reactors operate in cycles — fuel rods deplete and must be replaced
+    - Reactor designs require careful cooling to avoid meltdown
+    - Higher-efficiency designs using mixed uranium and plutonium fuel rods provide better output per fuel rod
+    - Nuclear Control allows remote temperature monitoring and automatic shutdown circuits
+
+    Nuclear power has a high setup cost but low ongoing fuel cost relative to output. It is viable at the HV–EV tier range.
+  </Accordion>
+
+  <Accordion title="Large multiblock turbines">
+    Large turbines are multi-block structures that consume fluids (steam, gas, or plasma) and produce high EU/t output. They become the primary power source from HV onward.
+
+    - **Large Steam Turbine** — burns steam; requires efficient boiler infrastructure feeding it
+    - **Large Gas Turbine** — burns various gaseous fuels; higher output than steam equivalent
+    - **Large Plasma Turbine** — burns plasma (produced in fusion reactors); very high output for late-game bases
+
+    Turbine efficiency depends on the rotor material and the fuel quality. Higher-tier rotor materials increase both efficiency and EU output. Turbines require maintenance hatches and periodic rotor replacement.
+  </Accordion>
+
+  <Accordion title="Magic-based power">
+    For players engaging with the magic progression, several mods offer EU generation through magical means.
+
+    - **Botania** — Mana can be converted to EU through adapter blocks, providing a renewable power source linked to flower automation
+    - **Thaumcraft** — Late-game essentia processing systems can generate power; ThaumicEnergistics allows essentia storage in AE2 networks
+    - **Blood Magic** — Life Essence can be converted to power through various addon mechanisms
+
+    Magic-based power is generally not a primary source for large-scale industrial bases but can supplement or power specialised magical processing setups.
+  </Accordion>
+
+  <Accordion title="Space-based power">
+    After progressing through Galacticraft, off-world power generation becomes viable.
+
+    - **Space solar panels** — solar panels in space (on the Moon, Mars, or asteroids) produce higher EU/t than surface panels because there is no atmosphere blocking sunlight
+    - **Planet-specific fuels** — certain planets have unique resources that can be refined into high-energy fuels for turbines or rocket generators
+    - **Hydrogen from gas giants** — gas giant atmospheres can be harvested for hydrogen, used as turbine fuel
+
+    Space-based generation is a late-game supplement that rewards exploration investment.
+  </Accordion>
+</AccordionGroup>
+
+## Cables, transformers, and voltage
+
+Every GregTech cable has two limits: **voltage** (EU per packet) and **amperage** (packets per tick). Cables also lose EU over distance — higher-tier cables lose less.
+
+To step voltage up or down, use **transformers**:
+
+- A transformer converts between adjacent voltage tiers (e.g., LV ↔ MV)
+- The input side connects to the higher voltage; the output side connects to the lower voltage
+- For stepping down: connect your HV line to the HV side, and your LV machines to the LV side
+- For stepping up: place the transformer in reverse (right-click with a screwdriver)
+
+Cable types by tier follow the same naming convention as machines (LV, MV, HV, etc.). Use the correct cable tier for your power line — using a lower-tier cable will cause it to burn out if amperage is too high.
+
+<Note>
+GregTech cables automatically convert EU to RF for compatible mods. Any RF-consuming machine connected to a GT cable will receive power correctly without needing additional conversion blocks.
+</Note>
+
+## Power storage
+
+<Tip>
+Store power in batteries or capacitor banks between your generators and machines. Generation rarely perfectly matches consumption, and having a buffer prevents machines from halting every time load spikes.
+</Tip>
+
+Storage options by tier:
+
+- **Battery Buffers** — GregTech blocks that hold batteries; available from LV onward
+- **Energy Storage Blocks** — compact, high-capacity EU storage blocks at higher tiers
+- **LESU (Lapotronic Energy Storage Unit)** — a multiblock high-capacity EU storage structure
+- **AESU / IDSU** — very high capacity storage for IV+ bases
+- **Draconic Evolution Energy Core** — extremely high capacity late-game storage from Draconic Evolution
+
+Always size your storage to handle at least several minutes of machine runtime so that brief generation gaps do not stall your production lines.

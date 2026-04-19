@@ -1,0 +1,125 @@
+---
+title: "Automation and Logistics in GTNH"
+description: "Automate items, storage, and machine chains in GTNH using Applied Energistics 2, EnderIO conduits, Logistics Pipes, and Storage Drawers."
+---
+
+Automation is not optional in GT New Horizons — it is a requirement. The sheer volume of materials that must be processed, sorted, stored, and routed through dozens of machines makes manual operation impossible at any meaningful scale. GTNH includes a wide range of automation and logistics mods, each with different strengths, power costs, and complexity levels. The right combination depends on the stage of your game and the scale of your factory.
+
+<Tip>
+Applied Energistics 2 becomes the backbone of most mid-to-late game bases — invest in it early. The upfront cost in materials and power is substantial, but the ability to digitise your entire inventory and automate crafting is transformative.
+</Tip>
+
+## Storage solutions
+
+<AccordionGroup>
+  <Accordion title="Applied Energistics 2">
+    AE2 provides a **digital storage network** where items are stored as data in ME Drives containing Storage Cells. Any item in the network is accessible from any ME Terminal connected to the same network, regardless of physical location.
+
+    Key components:
+
+    - **ME Controller** — the heart of the network; all cables connect back to it
+    - **ME Drives** — physical blocks that hold Storage Cells (1k, 4k, 16k, 64k, or higher with GTNH additions)
+    - **ME Terminals** — interface blocks for accessing the network inventory
+    - **ME Import / Export Bus** — automatically pull items from or push items to adjacent inventories
+    - **ME Interface** — the key block for automating crafting; machines can be connected to it for automatic job dispatch
+    - **Crafting CPU** — multi-block structure that handles autocrafting requests
+
+    AE2 also supports **fluid storage** via the AE2FluidCraft-Rework addon included in GTNH, allowing tanks and fluid inputs to be managed through the same network.
+
+    <Warning>
+    Each ME Controller face supports 32 channels. Every cable, bus, and device consumes one channel per connection. Plan your network topology carefully — a poorly designed network will run out of channels before covering your entire base. Use dense cables (8 channels per cable) and P2P tunnels to extend channel capacity.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Logistics Pipes">
+    Logistics Pipes is a pipe-based logistics system built on top of BuildCraft pipes. It uses a request/supply model where **supplier pipes** mark chests as sources and **request pipes** automatically pull items from suppliers when needed.
+
+    Key pipe types:
+
+    - **Basic Logistics Pipe** — connects a chest to the network; does not automatically move items
+    - **Supplier Pipe** — marks a chest as a source that will automatically supply items when requested
+    - **Request Pipe** — sends requests to the network for specific items
+    - **Chassis Pipe** — modular pipe that accepts upgrade modules for complex filtering and routing
+    - **Crafting Pipe** — triggers a machine or crafting table when a crafted item is requested
+
+    Logistics Pipes excels at fully automated machine chains where intermediate products need to be routed between machines without player involvement. It works without AE2 and is viable from early MV onward.
+  </Accordion>
+
+  <Accordion title="Storage Drawers">
+    Storage Drawers are simple, compact chests that hold a single item type per drawer face. They are ideal for bulk storage of common materials — ores, dusts, ingots, and logs — that you accumulate in large quantities.
+
+    - Each drawer slot holds one item type with a configurable maximum stack count
+    - **Drawer Controllers** connect multiple drawer blocks into a single network accessible from one point
+    - **Compacting Drawers** automatically convert between nuggets, ingots, and blocks
+    - Compatible with AE2 via Storage Bus, allowing drawer contents to appear in your ME network
+
+    Storage Drawers are the best option for items you produce and consume in bulk. Using them alongside AE2 reduces the number of expensive high-capacity storage cells needed.
+  </Accordion>
+
+  <Accordion title="JABBA Barrels">
+    JABBA (Just Another Better Barrel Attempt) Barrels are upgradeable single-item bulk storage containers. A basic barrel holds a large quantity of one item type; upgrades increase capacity further.
+
+    - **Structural upgrades** — increase barrel capacity
+    - **Hopper upgrade** — allows automatic input/output via hoppers above/below
+    - **Sticky upgrade** — locks the item type even when the barrel is empty (prevents accidental refilling with wrong item)
+
+    JABBA Barrels are simpler than Storage Drawers but easier to set up in early game before you have drawer infrastructure. They work well for overflow storage and simple single-item buffer tanks between machines.
+  </Accordion>
+
+  <Accordion title="Iron Chests and Iron Tanks">
+    Iron Chests provides larger versions of the vanilla chest in copper, iron, silver, gold, diamond, and crystal tiers. Each tier increases internal storage capacity.
+
+    Iron Tanks (from Railcraft) are modular fluid storage tanks. Multiple tank blocks can be assembled into a larger tank structure, and the total capacity scales with the number of blocks used.
+
+    Both are simple, power-free storage solutions best used in early game or for simple overflow buffers where a full logistics system is not warranted.
+  </Accordion>
+</AccordionGroup>
+
+## Item transport
+
+| System | Strengths | Best used for |
+|--------|-----------|---------------|
+| EnderIO Conduits | Flexible filtering, compact, handles items/fluids/energy in one block | Mid-to-late game machine connections |
+| BuildCraft Pipes | Simple, cheap, low overhead | Early game point-to-point routing |
+| Railcraft Carts | Bulk transport over long distances | Moving large item quantities between distant bases |
+| Steve's Factory Manager | Complex conditional routing and factory logic | Automated factory lines with complex rules |
+
+### EnderIO conduits
+
+EnderIO conduits are the most versatile item transport option in GTNH. A single conduit block can carry items, fluids, and energy simultaneously, reducing cable clutter significantly. Conduits support per-side filters, round-robin distribution, and priority systems.
+
+- **Item Conduits** — basic item transport with optional speed upgrades
+- **Enhanced / Ender Item Conduits** — higher throughput versions
+- **Filters** — inserted in conduit connections to restrict which items pass through
+- Conduits require EnderIO power (EU via GT cables or RF) for the enhanced tiers
+
+### BuildCraft pipes
+
+BuildCraft pipes are the simplest item transport available. Wooden pipes extract from inventories, stone pipes route items, diamond pipes filter by item type, and iron pipes act as one-way gates. They require no power for basic operation and are accessible from early LV.
+
+BuildCraft pipes are best for simple two- or three-machine setups. For larger networks, EnderIO or Logistics Pipes scale better.
+
+### Railcraft
+
+Railcraft provides rail-based bulk item transport. Carts with chest or tank attachments travel along rails between loading and unloading stations. While slower than pipe-based systems for continuous flow, Railcraft excels at moving large batches of items between distant locations — for example, moving mined ore from a remote dimension portal to your main base.
+
+### Steve's Factory Manager
+
+Steve's Factory Manager (SFM) allows complex conditional automation scripts. An SFM Manager block connects to multiple inventories and can move items based on schedules, conditions, and item counts. It is significantly more powerful than pipes for factory automation but has a steeper learning curve.
+
+SFM is useful for orchestrating multi-step machine chains, managing input ratios for machines that need multiple ingredients, and handling overflow/understock situations automatically.
+
+## Fluid automation
+
+<Note>
+Different automation systems have different power costs and throughput capabilities. EnderIO conduits consume EU/t per active conduit; AE2 runs on its own power draw from ME Controllers and drives; BuildCraft pipes are power-free. Factor this into your power budget when designing large automation systems.
+</Note>
+
+For fluid handling:
+
+- **EnderIO Fluid Conduits** — carry fluids in the same conduit as items and energy
+- **Railcraft Fluid Unloaders / Loaders** — transfer fluids to/from tank carts
+- **Buildcraft Fluid Pipes** — basic fluid transport
+- **AE2 Fluid Storage** (via AE2FluidCraft) — store fluids digitally in ME Fluid Storage Cells, accessible from ME Terminals
+
+For large-scale fluid management (oil refining, distillation output storage), Iron Tanks or large EnderIO fluid conduit networks feeding into central tank banks are the most practical solution before AE2 fluid infrastructure is available.

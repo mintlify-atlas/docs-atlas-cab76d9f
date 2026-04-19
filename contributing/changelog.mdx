@@ -1,0 +1,75 @@
+---
+title: 'Generating and Reading GTNH Changelogs'
+description: 'Use changelog.py to generate changelogs between GTNH versions, and learn how tagged releases and nightly builds are packaged and published on GitHub.'
+---
+
+GTNH uses a tag-based release system on GitHub. Each official release is marked with a git tag (e.g., `2.8.0`), which triggers an automated GitHub Actions workflow that packages and publishes the release. Between official releases, nightly development builds are available for players who want to test the latest changes before they land in a stable version. The `changelog.py` script in the repository lets you generate a human-readable changelog between any two versions.
+
+## Release structure
+
+When a git tag is pushed to the repository, the `release-tags.yml` workflow runs automatically. It creates a ZIP archive containing all config files, quest data, resource packs, server configs, and scripts — everything needed to run the pack except the mods themselves, which launchers download separately. The ZIP is published as a GitHub Release under the tag name.
+
+The release archive includes:
+- `config/` — all mod configuration files and quest data
+- `scripts/` — CraftTweaker and other script files
+- `resources/` — resource packs and custom assets
+- Server configuration files
+
+The `changelog.py` script and `.github/` directory are excluded from release ZIPs.
+
+## The changelog.py tool
+
+`changelog.py` is a Python script that generates a human-readable changelog between two git tags (or from a tag to the current HEAD). It reads the git log, extracts referenced GitHub issue numbers from commit messages, fetches the issue titles from the GitHub API, and outputs a formatted list grouped by issue.
+
+### Prerequisites
+
+- Python 3
+- Git (accessible from the terminal)
+- `requests` and `lxml` Python libraries
+
+### Installation and usage
+
+```bash
+# Create and activate a virtual environment
+python -m venv venv
+
+# Windows
+venv\Scripts\activate.bat
+
+# Linux/Mac
+source venv/bin/activate
+
+# Install dependencies
+pip install requests lxml
+
+# Generate changelog between two versions
+python changelog.py 2.7.0 2.8.0
+
+# Generate from a version to current HEAD
+python changelog.py 2.7.0
+```
+
+The script clones or updates the GTNH repository locally, then runs `git log --oneline` between the two specified tags. For each commit that references a GitHub issue number (e.g., `#1234`), it fetches the issue title from GitHub and groups related commits under it. Commits without issue references are listed individually.
+
+<Note>
+  The changelog script fetches issue titles by making HTTP requests to GitHub. For large changelogs spanning many issues, you may hit the unauthenticated API rate limit. If this happens, the script will pause and wait for the rate limit to reset before continuing.
+</Note>
+
+## Reading changelogs
+
+Official release changelogs are published on the GitHub Releases page at [github.com/GTNewHorizons/GT-New-Horizons-Modpack/releases](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/releases). Each release includes patch notes with a summary of changes, linked issues, and the downloadable ZIP.
+
+<Tip>
+  Check the GitHub releases page for detailed patch notes accompanying each version — it is the fastest way to see what changed between any two releases without running the script locally.
+</Tip>
+
+## Nightly builds vs official releases
+
+| | Nightly builds | Official releases |
+|---|---|---|
+| Stability | Development snapshots, may contain bugs | Tested and stable |
+| Availability | Continuous, between official releases | Periodic |
+| Purpose | Testing latest changes | General play |
+| Version number | Based on commit or date | Tagged semver (e.g., `2.8.0`) |
+
+Nightly builds are useful for contributors testing their changes or for players who want the latest fixes before they land in a stable release. For general play, official releases are recommended.

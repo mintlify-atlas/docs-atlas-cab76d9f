@@ -1,0 +1,121 @@
+---
+title: "Using the GTNH Questbook"
+description: "Navigate GTNH's BetterQuesting questbook with 3500+ quests — understand tabs, tasks, rewards, loot bags, and how the questbook guides your progression."
+---
+
+The GTNH questbook is powered by **BetterQuesting** and contains over 3500 quests covering virtually every aspect of the pack — from your first wooden tools to late-game planetary exploration. It is not just a checklist; it is the primary guide for understanding how the pack's mods fit together, what is required to progress, and why certain steps happen in a specific order. Skipping the questbook means navigating one of the most complex modpacks ever made without a map.
+
+## Opening the questbook
+
+Press **B** (default keybind) to open the questbook at any time. Alternatively, if you have the physical quest book item in your inventory, right-click it to open the interface.
+
+<Note>
+  Start with the **Introduction** tab. It is specifically written for new players and covers the most important first steps in the correct order. Do not skip it in favor of jumping straight to the GT Progression tab.
+</Note>
+
+## Navigating tabs
+
+The questbook is organized into tabs along the top of the interface. Each tab covers a different mod, progression stage, or category:
+
+- **Introduction** — first-time player guidance and orientation
+- **GT Progression** — the main GregTech technology tree, organized by tier
+- **Magic** — Thaumcraft, Blood Magic, Botania, and related mods
+- **Exploration** — Twilight Forest, dungeons, and dimension content
+- **Side content** — optional quests for individual mods like Forestry, Railcraft, and Applied Energistics
+- **Tips and Tricks** — standalone advice quests that appear in multiple tabs
+
+Tabs with locked or greyed-out quests indicate content that requires prerequisites. Work through the visible quests to unlock more.
+
+## Quest structure
+
+Every quest has four components:
+
+- **Name** — shown in the quest graph and in the quest title bar
+- **Description** — the main body of text explaining the quest's context, how to do the task, and any important warnings or notes
+- **Tasks** — the specific items to collect, craft, or machines to build to complete the quest
+- **Rewards** — what you receive upon completing all tasks
+
+<Tip>
+  Read quest descriptions carefully — they often contain critical information about mod mechanics, processing chains, and common mistakes. The description frequently explains *why* something is done, not just *what* to do.
+</Tip>
+
+## Clicking items in quest descriptions
+
+One of the most useful features of the questbook is recipe lookup integration. When you see an item icon displayed inside a quest description or task list, click it. This opens NEI (Not Enough Items) directly showing that item's recipe, saving you the step of manually searching for it.
+
+This works for any item shown in the quest interface, including task target items and reward previews.
+
+## The reward system
+
+Completing quests rewards you with items, loot bags, or coins. Rewards vary by quest importance and difficulty.
+
+<AccordionGroup>
+  <Accordion title="Quest rewards explained">
+    Quests offer two types of rewards:
+
+    - **Item rewards** — you receive all listed items immediately upon claiming the reward
+    - **Choice rewards** — you choose one item from a presented list
+
+    Some quests have a cooldown before they can be claimed again. Repeatable quests show a timer after completion. Most quests are one-time only.
+
+    Coins are the pack's primary trade currency. They come in several denominations and can be exchanged at certain questbook reward shops for specific items that would otherwise be difficult to obtain. Hold onto coins and spend them deliberately — some items available through coin exchange are extremely valuable in early and mid-game.
+  </Accordion>
+  <Accordion title="Loot bags explained">
+    Loot bags are a randomized reward item. Right-click a loot bag to open it and receive a random selection of items from its loot table. Different loot bag tiers (by name and color) correspond to different quality pools.
+
+    Common loot bag contents include:
+    - Food items
+    - Basic materials and ores
+    - Rare components for mid-game machines
+    - Coins
+
+    Early-game loot bags tend to reward food and basic materials. Higher-tier bags obtained from GT Progression quests can contain valuable pre-crafted components that would otherwise require significant time to produce.
+
+    Do not feel obligated to open all loot bags immediately. Some players save them until a specific material is needed, though the random nature means there are no guarantees.
+  </Accordion>
+</AccordionGroup>
+
+## Secret quests
+
+Some quests are hidden until their prerequisites are met. These are intentional surprises — usually bonus rewards for players who explore off the main path or who discover something unexpected in the world. You will not see secret quests in the quest graph until you have unlocked them.
+
+Secret quests are used sparingly in GTNH and are primarily for surprise bonuses or hidden riddles, not for required progression content.
+
+## Quest text colors
+
+Quest descriptions use color-coded formatting to communicate the type of information at a glance:
+
+| Color | Meaning |
+|-------|---------|
+| **Red** | Warnings — important caveats, common mistakes, or actions to avoid |
+| **Aqua** | Notes — supplementary information, alternatives, or author commentary |
+| **Blue** (underlined) | Links — clickable URLs pointing to the wiki or other resources |
+
+Default white text is standard instructional content. When you see red text, stop and read it carefully before proceeding.
+
+## Main quests vs. side quests
+
+GTNH quests are divided into two categories:
+
+- **Main quests** — these form the critical path of progression through each tier. They are typically required to unlock subsequent quests and reflect the intended order of play.
+- **Side quests** — these are optional and cover individual mods or alternative approaches. They often provide useful rewards but are not required to advance.
+
+In the quest designer, main quests are marked with a flag icon. In practice, the GT Progression tab consists almost entirely of main quests, while other tabs contain a mix. If you are unsure whether a quest is required, checking whether downstream quests depend on it in the quest graph is the most reliable indicator.
+
+## Admin and reset commands
+
+If you need to reset quest progress (for example, to start fresh or fix a corrupted state on a server), the following command is available to server operators:
+
+```text
+/bq_admin reset all
+```
+
+This resets all quest progress for the player who runs it (or a named player if used with a username argument). On a server, only administrators with the appropriate permission level can run this command. It is also used during questbook development to test quest completion from a clean state.
+
+Other useful admin commands:
+
+```text
+/bq_admin default load   # Reload quests from the DefaultQuests folder
+/bq_admin default save   # Save current quest state to the DefaultQuests folder
+/bq_admin edit           # Toggle quest editing mode
+```

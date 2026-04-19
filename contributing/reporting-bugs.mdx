@@ -1,0 +1,96 @@
+---
+title: 'Reporting Bugs and Issues in GTNH'
+description: 'File crash reports, bug reports, and feature suggestions for GT New Horizons on GitHub — including required fields, version info, and tips for fast resolution.'
+---
+
+The GitHub issue tracker at [github.com/GTNewHorizons/GT-New-Horizons-Modpack](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack) is the primary place to report bugs, crashes, and unexpected behavior in GTNH. Each issue type has a structured template that guides you through providing the information the development team needs to investigate. Filing a complete, well-described report is the single most effective thing you can do to get an issue resolved quickly.
+
+## Before filing
+
+Search existing open and closed issues before creating a new one. If you find a closed issue that matches your bug, post a comment on it — this signals the team to investigate and reopen it if the issue persists. Always update to the latest GTNH version before reporting: each release fixes hundreds of bugs, and your issue may already be resolved.
+
+## Issue types
+
+### Crash report
+
+Use this template when the game abruptly closes, the window disappears, or the game fails to start. Examples: crashing to desktop, uncommanded shutdown.
+
+Required fields: pack version, server, Java version, description of actions before the crash, and the full crash report file or FML log.
+
+### Bug report
+
+Use this template for unexpected behavior that does not cause a crash. Examples: item duplication, item voiding, incorrect recipes, behavior that does not match the description.
+
+Required fields: pack version, server, Java version, what you expected to happen, what actually happened, and a proposed fix.
+
+### Suggest a change
+
+Use this template to propose a balance tweak, recipe adjustment, or config change to an existing feature. Examples: changing crafting costs, adjusting mob difficulty, tweaking power requirements.
+
+Required fields: pack version, your proposal, the goal behind it, and how it improves the pack.
+
+### Request new feature
+
+Use this template to propose an entirely new addition to the pack — something that does not exist yet. Examples: new processing lines, new machine types, new content additions.
+
+Required fields: pack version, your proposal, the goal, and how it improves the pack.
+
+### Suggest a new mod
+
+Use this template to propose adding a mod to the pack. The mod must be open-source and fit the pack's progression philosophy. A preliminary investigation (what happens when you add it, what needs tweaking) is required.
+
+Required fields: pack version, mod name, mod features, reason for inclusion, preliminary investigation, and open-source license confirmation.
+
+## Required information for bug reports
+
+When filing a crash report or bug report, you will be asked for:
+
+| Field | Description |
+|---|---|
+| GTNH Discord username | Optional, but helps the team reach you for follow-up |
+| Pack version | The version you are playing (e.g., `2.8.0`) |
+| Server | Server name, or `SP` for singleplayer |
+| Java version | Java 8, 17, 21, or other — prefer the latest minor release |
+| Type of server | Single Player, Vanilla Forge, Crucible, Thermos, etc. |
+| Steps to reproduce | Exact actions that trigger the issue |
+| Expected behavior | What you expected to happen |
+| Actual behavior | What happened instead |
+| Proposed fix | Your suggestion, if you have one |
+
+## Filing an effective bug report
+
+<Steps>
+  <Step title="Update to the latest version">
+    Install the latest GTNH release before filing. Hundreds of bugs are fixed each release, and reports on old versions are difficult to act on.
+  </Step>
+  <Step title="Search existing issues">
+    Search the issue tracker for your bug. If a closed issue matches, comment on it rather than opening a duplicate.
+  </Step>
+  <Step title="Choose the correct template">
+    Navigate to the [new issue page](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/issues/new/choose) and select the template that matches your report type.
+  </Step>
+  <Step title="Fill out all required fields">
+    Provide your pack version, server, and Java version. These are required and issues filed without them will be closed.
+  </Step>
+  <Step title="Describe the problem clearly">
+    Write out exactly what you did, what you expected, and what happened instead. Be specific — vague reports are hard to reproduce.
+  </Step>
+  <Step title="Attach logs and screenshots">
+    Include the crash report or FML log. Drag files directly into the GitHub text box to attach them. Screenshots of unexpected behavior are always helpful.
+  </Step>
+  <Step title="Submit and follow up">
+    Submit the issue and monitor it for follow-up questions. If the team cannot reproduce the issue, they may ask for additional information.
+  </Step>
+</Steps>
+
+<Tip>
+  Include screenshots and crash logs (from the `crash-reports` folder) whenever possible — they dramatically reduce the time needed to diagnose an issue.
+</Tip>
+
+<Note>
+  For crashes, attach the full crash report from `.minecraft/crash-reports/`. If no crash report was generated, attach `logs/fml-client-latest.log` (client crash) or `logs/fml-server-latest.log` (server crash).
+</Note>
+
+<Warning>
+  Issues filed without a pack version will be closed — always include your version number.
+</Warning>

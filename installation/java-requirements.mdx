@@ -1,0 +1,74 @@
+---
+title: "Java and RAM Setup for GT New Horizons Compatibility"
+description: "Learn which Java versions work with GT New Horizons, which is recommended, and how to configure your Java installation in Prism Launcher and MultiMC."
+---
+
+GT New Horizons runs on Minecraft 1.7.10, which has specific Java compatibility requirements. Using an unsupported or misconfigured Java version is one of the most common causes of crashes, rendering glitches, and unexpected behaviour. Taking a few minutes to verify your Java setup before launching saves significant troubleshooting time later.
+
+<Warning>
+  Using the wrong Java version is a common cause of crashes. Always verify your Java configuration before reporting a bug.
+</Warning>
+
+## Supported Java versions
+
+| Java version | Status | Notes |
+|---|---|---|
+| Java 8 | Supported | Works but older; lacks performance improvements found in newer versions |
+| Java 17 | **Recommended** | Best balance of compatibility and performance for GTNH |
+| Java 21 | Supported | Compatible; use the latest minor release |
+| Java 24 / 25 | Experimental | May work but not officially tested; expect possible issues |
+
+<Note>
+  If you are using Java 9 or later, always update to the latest minor release of that version. For example, prefer Java 17.0.6 over 17.0.2. Minor updates include important fixes that can affect stability.
+</Note>
+
+## Setting your Java version
+
+<Tabs>
+  <Tab title="Prism Launcher">
+    <Steps>
+      <Step title="Open instance settings">
+        Right-click your GTNH instance in Prism Launcher and choose **Edit**.
+      </Step>
+      <Step title="Go to Java settings">
+        Select the **Settings** tab, then click **Java** in the left sidebar.
+      </Step>
+      <Step title="Enable custom Java path">
+        Check **Override global Java settings**, then either use **Auto-detect** to find installed Java versions, or click the folder icon to manually select your Java 17 executable.
+      </Step>
+      <Step title="Set memory allocation">
+        In the same panel, set **Minimum memory** and **Maximum memory** to at least 6144 MB.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="MultiMC">
+    <Steps>
+      <Step title="Open instance settings">
+        Right-click your GTNH instance and select **Edit Instance**.
+      </Step>
+      <Step title="Go to the Settings tab">
+        Click the **Settings** tab at the top, then select **Java** from the left menu.
+      </Step>
+      <Step title="Set the Java path">
+        Check **Override global settings**, then click **Browse** next to **Java installation** and navigate to your Java 17 `java` or `java.exe` executable.
+      </Step>
+      <Step title="Set memory allocation">
+        Update **Minimum memory allocation** and **Maximum memory allocation** to at least 6144 MB each.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## RAM requirements
+
+Allocating enough memory is as important as the Java version itself.
+
+| Use case | Minimum | Recommended |
+|---|---|---|
+| Singleplayer client | 6 GB | 8 GB |
+| Multiplayer client | 6 GB | 8 GB |
+| Dedicated server | 4 GB | 6 GB |
+
+<Tip>
+  If you experience frequent garbage collection pauses or stuttering, try increasing memory to 8–10 GB and add the following JVM arguments to your launcher for better performance with large modpacks: `-XX:+UseG1GC -XX:MaxGCPauseMillis=50`
+</Tip>

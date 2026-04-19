@@ -1,0 +1,88 @@
+---
+title: 'Developing Quests for GT New Horizons'
+description: 'Complete workflow for writing, testing, and submitting quest changes to GTNH — from setting up the editor to opening a pull request.'
+---
+
+The questbook is one of GTNH's defining features, guiding players through thousands of hours of progression across over 3,500 quests. It is an ongoing community effort: quests are written, corrected, and expanded with each release. Anyone can contribute quest content, provided they follow the guidelines below and have genuine familiarity with the content they are writing about.
+
+## Quest content guidelines
+
+Before writing or editing quests, read and follow these conventions:
+
+1. Quests should primarily provide useful information and guide players through pack progression. Lore is welcome on top of that, but information comes first.
+2. Only change quests on topics you have expertise in and have played yourself. For brand-new additions, coordinate with the developer who added the feature.
+3. Secret quests should only be used sparingly for surprise bonuses or riddles — not as a general quest pattern.
+4. Crafting quests are reserved for early-game progression. They should not appear in mid- or late-game content.
+5. Most quests should belong to one quest line only. The Tips & Tricks tab and transition quests are the standard exceptions.
+6. Quest text formatting uses three special tags:
+   - Red `[warn]text[/warn]` — for warnings (prefix with "WARNING:" where needed)
+   - Aqua `[note]text[/note]` — for notes, meta-commentary, or alternative approaches
+   - Blue `[url]https://...[/url]` — for working hyperlinks (turns the text blue and underlined)
+
+## Setting up for quest development
+
+<Steps>
+  <Step title="Fork the repository">
+    Fork [GTNewHorizons/GT-New-Horizons-Modpack](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack) to your GitHub account. If you use GitHub Desktop, click **Code** then **Open with GitHub Desktop**, and choose "contribute to parent repo" so new branches are based on the upstream master.
+  </Step>
+  <Step title="Download the latest GTNH release">
+    You need the full game — the latest stable release or a nightly build. Do not use a development environment. Download from [gtnewhorizons.com/downloads](https://www.gtnewhorizons.com/downloads/).
+  </Step>
+  <Step title="Get the latest BetterQuesting">
+    Download the latest BetterQuesting release (not a pre-release) from [github.com/GTNewHorizons/BetterQuesting/releases](https://github.com/GTNewHorizons/BetterQuesting/releases) and replace the version in your mods folder if it is outdated.
+  </Step>
+  <Step title="Replace DefaultQuests with the GitHub version">
+    Delete the `config/betterquesting/DefaultQuests` folder in your game directory entirely, then copy in the folder from your local clone of the repository. Do not merge the two folders.
+  </Step>
+  <Step title="Load quests in-game">
+    Start GTNH, load a world, wait a few seconds, then run `/bq_admin default load` in chat. Verify your questbook matches the latest changes from the upstream repository.
+  </Step>
+  <Step title="Enable edit mode">
+    Run `/bq_admin edit` to toggle edit mode on. You can now create and modify quests using the in-game BetterQuesting designer.
+  </Step>
+  <Step title="Make your quest changes">
+    Edit quests in-game using the BetterQuesting designer. For new quests, open the questbook, click **Edit**, select the target tab, then click **Designer** → **New Quest**. Set the icon, requirements, tasks, and rewards.
+  </Step>
+  <Step title="Save and copy back to the repository">
+    Run `/bq_admin default save` in chat. Then delete the `DefaultQuests` folder in your repository clone and copy in the one from your game directory. Do not merge.
+  </Step>
+  <Step title="Commit your changes">
+    Commit the updated DefaultQuests folder to your branch. Write a short summary describing what you changed.
+  </Step>
+  <Step title="Open a pull request">
+    Push your branch and open a PR to `GTNewHorizons/GT-New-Horizons-Modpack` master. List all your changes in the PR description, include screenshots where useful, and reference related GitHub issues with `fixes #<number>`.
+  </Step>
+</Steps>
+
+<Warning>
+  The DefaultQuests folder must be replaced entirely (delete then copy), not merged. Merging will result in stale quest data being committed alongside your changes.
+</Warning>
+
+<Tip>
+  Commit one quest per commit — it makes the PR much easier to review and allows specific changes to be reverted cleanly without affecting other quests.
+</Tip>
+
+## Key commands
+
+```text
+/bq_admin default load        # Load quests from DefaultQuests folder
+/bq_admin default save        # Save quests to DefaultQuests folder
+/bq_admin edit                # Toggle edit mode on/off
+/bq_admin reset all           # Reset all quest progress (for testing)
+/bq_admin default exportlang  # Export translation template
+```
+
+## Testing quests
+
+After making changes, use `/bq_admin edit` to leave editing mode before testing. Craft items normally — do not take them from NEI, as NEI items may have incorrect metadata or NBT data. Complete prerequisite quests in designer mode if needed, then use `/bq_admin reset all` to reset progress before re-testing.
+
+## Quest translation
+
+When the questbook data is updated on GitHub, an automated workflow (questbook-i18n.yml) regenerates `config/txloader/load/betterquesting/lang/template.lang`. This file contains all English quest text and serves as the translation base.
+
+To create a translation:
+
+1. Use the keys from `template.lang` to create a new lang file in the same directory. For example, `zh_CN.lang` for Simplified Chinese.
+2. Do not modify or commit `template.lang` directly — it is auto-generated and will be overwritten.
+3. If you want a local copy of the current template without pushing to GitHub, run `/bq_admin default exportlang` in-game. The file is written to `config/betterquesting/DefaultQuests/template.lang`. Do not commit this file.
+4. Submit your translation file as a pull request.

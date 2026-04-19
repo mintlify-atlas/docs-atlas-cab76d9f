@@ -1,0 +1,107 @@
+---
+title: "Launcher Setup for GT New Horizons: Pick Your Tool"
+description: "Compare the launchers supported by GT New Horizons — Prism, MultiMC, Technic, and CurseForge — and follow per-launcher setup instructions."
+---
+
+GT New Horizons can be installed through several third-party launchers. Each launcher handles modpack management differently, so choose the one that best fits your workflow. All of them can run GTNH correctly when configured properly; the main differences are in Java management, update handling, and ease of setup.
+
+<Warning>
+  Avoid the vanilla Minecraft launcher — it does not support modpack management and cannot install GTNH.
+</Warning>
+
+## Launcher setup
+
+<Tabs>
+  <Tab title="Prism Launcher">
+    Prism Launcher is an open-source, community-maintained launcher with built-in Java version management. It is the recommended choice for new and experienced players alike.
+
+    **Download:** [prismlauncher.org](https://prismlauncher.org/)
+
+    <Steps>
+      <Step title="Install Prism Launcher">
+        Download and install Prism Launcher from the official site. On first launch, you will be prompted to log in with your Microsoft account.
+      </Step>
+      <Step title="Set up Java">
+        Go to **Settings → Java** and use the auto-detect feature, or manually point Prism to your Java 17 installation. Prism can also download a managed Java runtime for you.
+      </Step>
+      <Step title="Add the GTNH instance">
+        Click **Add Instance**, then select **Import** and provide the GTNH modpack zip downloaded from [gtnewhorizons.com/downloads](https://www.gtnewhorizons.com/downloads/).
+      </Step>
+      <Step title="Configure RAM">
+        Right-click the instance, choose **Edit**, then go to **Settings → Java** and set the minimum and maximum memory to at least 6144 MB (6 GB).
+      </Step>
+      <Step title="Launch">
+        Double-click the instance to start the game.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="MultiMC">
+    MultiMC is a lightweight, long-standing launcher that offers straightforward instance management. It does not include automatic Java management, so you must install Java separately.
+
+    **Download:** [multimc.org](https://multimc.org/)
+
+    <Steps>
+      <Step title="Install MultiMC">
+        Download and extract MultiMC from the official site. Launch it and sign in with your Microsoft account.
+      </Step>
+      <Step title="Add the GTNH instance">
+        Click **Add Instance**, select **Import from zip**, and point it to the GTNH pack zip from [gtnewhorizons.com/downloads](https://www.gtnewhorizons.com/downloads/).
+      </Step>
+      <Step title="Configure Java">
+        Right-click the instance and choose **Edit Instance → Settings → Java installation**. Set the path to your Java 17 executable and configure memory allocation.
+      </Step>
+      <Step title="Set RAM">
+        In the same settings panel, set **Minimum memory** and **Maximum memory** to at least 6144 MB.
+      </Step>
+      <Step title="Launch">
+        Double-click the instance to start GTNH.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Technic Launcher">
+    Technic Launcher provides a simpler, one-click install experience. It handles downloading and setup automatically but gives less control over Java versions and memory settings.
+
+    **Modpack page:** [technicpack.net/modpack/mcnewhorizons.677387](http://www.technicpack.net/modpack/mcnewhorizons.677387)
+
+    <Steps>
+      <Step title="Install Technic Launcher">
+        Download and install Technic Launcher from [technicpack.net](https://www.technicpack.net/).
+      </Step>
+      <Step title="Find GT New Horizons">
+        In the launcher, search for **GT New Horizons** or navigate directly to the modpack page and click **Install**.
+      </Step>
+      <Step title="Configure Java and RAM">
+        Open **Launcher Options → Java Settings** and increase the RAM allocation to at least 6 GB. You can also point the launcher to a specific Java installation here.
+      </Step>
+      <Step title="Launch">
+        Click **Play** on the GTNH modpack page.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="CurseForge">
+    CurseForge (via the Overwolf app) is a convenient option if you already use it for other modpacks. It manages downloads automatically but has more limited Java configuration compared to Prism or MultiMC.
+
+    **Modpack page:** [minecraft.curseforge.com/projects/gt-new-horizons](https://minecraft.curseforge.com/projects/gt-new-horizons)
+
+    <Steps>
+      <Step title="Install the CurseForge app">
+        Download and install the CurseForge desktop app from [curseforge.com](https://www.curseforge.com/).
+      </Step>
+      <Step title="Find GT New Horizons">
+        Open the Minecraft section, search for **GT New Horizons**, and click **Install**.
+      </Step>
+      <Step title="Configure RAM">
+        Go to **Settings → Minecraft** in the CurseForge app and increase the allocated memory to at least 6 GB.
+      </Step>
+      <Step title="Launch">
+        Click **Play** on the GT New Horizons entry in your library.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## RAM allocation
+
+<Note>
+  Allocate a minimum of 6–8 GB of RAM for GTNH. For larger worlds, servers with many active players, or heavier modded setups, 8–10 GB is recommended. Setting too little RAM is the single most common cause of lag spikes, freezes, and crashes.
+</Note>

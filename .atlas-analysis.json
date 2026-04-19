@@ -1,28 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "GregTech New Horizons",
+  "projectType": "general",
+  "projectName": "GregTech New Horizons",
+  "projectDescription": "A long-form progressive Minecraft 1.7.10 modpack built around GregTech, featuring 3500+ quests, deep tech and magic progression, and 10+ years of community refinement.",
   "theme": "maple",
-  "colors": {
-    "primary": "#7c7c7c",
-    "light": "#090909",
-    "dark": "#cbcbcb"
-  },
-  "favicon": "https://media.brand.dev/e84c61ba-fb32-4fda-b685-d32bb83f4dc6.svg",
-  "logo": {
-    "light": "https://media.brand.dev/620d6cc5-1c6f-42af-9aa6-e0e0ff96c51f.svg",
-    "dark": "https://media.brand.dev/620d6cc5-1c6f-42af-9aa6-e0e0ff96c51f.svg"
-  },
-  "navbar": {
-    "primary": {
-      "type": "github",
-      "href": "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack"
-    }
-  },
-  "footer": {
-    "socials": {
-      "github": "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack"
-    }
-  },
+  "primaryColor": "#7c7c7c",
+  "lightColor": "#090909",
+  "darkColor": "#cbcbcb",
   "navigation": {
     "tabs": [
       {
@@ -117,5 +100,25 @@
         ]
       }
     ]
-  }
+  },
+  "keyFeatures": [
+    "3500+ guided quests covering all aspects of mod progression",
+    "GregTech-centered technology tree with EU power system and tiered machinery",
+    "Balanced tech and magic integration (Thaumcraft, Blood Magic, Botania, Witchery)",
+    "Realistic ore vein generation requiring multi-dimensional mining",
+    "Over 200 mod integrations refined over 10+ years of active development",
+    "Custom world generation with Realistic World Gen and Biomes O' Plenty",
+    "Space progression via Galacticraft and Galaxy Space for endgame resources",
+    "Active multiplayer community with official and community-run servers"
+  ],
+  "publicApiSurface": [
+    "BetterQuesting /bq_admin commands (edit, default load, default save, reset all)",
+    "CraftTweaker recipe modification scripts",
+    "GregTech configuration files (GregTech.cfg, WorldGeneration.cfg, Pollution.cfg)",
+    "changelog.py CLI tool for generating version changelogs",
+    "GitHub release workflow (release-tags.yml) producing versioned modpack ZIPs",
+    "Quest internationalization workflow (questbook-i18n.yml) and lang file system",
+    "servers.json community server list",
+    "config/betterquesting/DefaultQuests quest data directory"
+  ]
 }

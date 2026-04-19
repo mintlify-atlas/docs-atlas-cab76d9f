@@ -1,0 +1,81 @@
+---
+title: "Ore Processing Chains in GTNH"
+description: "GregTech's multi-step ore processing system multiplies material yield and produces valuable byproducts — mastering it is essential to progression."
+---
+
+Ore processing is one of the most important systems to understand in GT New Horizons. GregTech replaces vanilla ore generation entirely and introduces a multi-step processing chain where each additional machine in the pipeline increases the number of ingots you get from a single ore block. At baseline, smelting a raw ore gives one ingot. With a full processing chain, the same ore can yield three or more ingots plus several valuable byproduct materials. Given that many ores are scarce and require dimensional travel to find, extracting maximum value from every ore block is essential for maintaining progression.
+
+<Tip>
+Even just macerating before smelting doubles your output — never smelt raw ore directly. A Macerator at LV pays for itself within minutes of use.
+</Tip>
+
+## Processing tiers
+
+Each step in the chain requires additional machines and time, but yields more material per ore block.
+
+| Step | Machines needed | Output multiplier | Notes |
+|------|----------------|-------------------|-------|
+| Raw → smelt | Furnace only | 1x | Baseline; always wasteful |
+| Macerate → smelt | Macerator | 2x | Minimum recommended chain |
+| Macerate → Ore Wash → smelt | Macerator, Ore Washer | 2x + bonus dust | Recovers additional crushed ore dust |
+| Macerate → Thermal Centrifuge → smelt | Macerator, Thermal Centrifuge | 2x + byproducts | Produces rare byproduct materials |
+| Macerate → Ore Wash → Thermal Centrifuge → smelt | Macerator, Ore Washer, Thermal Centrifuge | ~3x + byproducts | Near-maximum output |
+| Chemical processing | Chemical Bath, Electrolyzer | Varies | Required for specific materials |
+
+### Step-by-step breakdown
+
+**Step 1 — Macerate:** Feed the raw ore into a Macerator to produce two piles of crushed ore dust. This alone doubles your output and is the single most impactful step. The crushed ore can be smelted immediately for 2 ingots, or processed further.
+
+**Step 2 — Ore Washer:** Run the crushed ore through the Ore Washer (requires water) to produce washed crushed ore plus a small amount of additional dust and stone dust. The additional dust represents trace minerals recovered during washing.
+
+**Step 3 — Thermal Centrifuge:** Feed washed crushed ore into the Thermal Centrifuge to produce impure dust and separate byproduct dusts. This is where valuable secondary materials appear — copper ore yields tiny amounts of nickel and cobalt; iron ore yields nickel and tin traces.
+
+**Step 4 — Smelt or further process:** Impure dust can be smelted directly for ingots, or purified in a Centrifuge to produce pure dust before smelting. Pure dust smelts cleanly with no yield loss.
+
+**Step 5 — Chemical Bath (optional):** For certain ores, soaking crushed ore in specific chemicals (mercury, sodium persulfate) in the Chemical Bath improves byproduct recovery further. This is used for gold, silver, and platinum group metals.
+
+**Step 6 — Electrolyzer (optional):** Specific dusts can be electrolyzed to separate them into their component elements, useful for recovering rare materials from mixed or complex ores.
+
+## Common ore byproducts
+
+Different ores produce different byproducts when processed through a full chain. Knowing these byproducts helps plan which ores to prioritise and which processing steps matter most.
+
+| Ore | Primary output | Notable byproducts |
+|-----|---------------|-------------------|
+| Copper | Copper | Nickel, Cobalt |
+| Iron | Iron | Nickel, Tin |
+| Gold | Gold | Copper, Nickel |
+| Tin | Tin | Iron, Zinc |
+| Lead | Lead | Silver, Sulfur |
+| Nickel | Nickel | Cobalt, Iron, Platinum |
+| Pyrite | Iron | Sulfur, Copper |
+| Tetrahedrite | Copper | Antimony, Iron |
+| Sphalerite | Zinc | Gallium, Sulfur |
+
+Byproduct recovery is one of the reasons the full processing chain matters — some materials like platinum and gallium are nearly impossible to obtain except as byproducts from processing other ores.
+
+## Ore vein system
+
+GregTech replaces vanilla scattered ore generation with a **vein system**. Instead of finding small clusters of ore throughout the world, ores spawn in large, concentrated veins — typically 10×10 chunks or larger — that are rich when found but entirely absent between veins. A single vein can supply your base for hours; between veins, the same ore may simply not exist.
+
+<Note>
+Many ores only spawn in specific dimensions. Tin and copper are overworld ores, but iridium requires mining in the End, and several other materials only appear on the Moon, Mars, or asteroids via Galacticraft. Plan dimensional progression around resource needs.
+</Note>
+
+Ore veins consist of four layers of different but related ores. A Copper vein, for example, might contain copper, tin, tetrahedrite, and malachite layers, giving you access to related materials in one location.
+
+### Finding veins
+
+Because ores are localised, finding them requires prospecting rather than strip mining:
+
+- **Prospector's Scanner** — right-click on stone to detect nearby ores in the direction you're facing
+- **VisualProspecting mod** — included in GTNH; records vein locations on your map once found and shares discoveries across your team on servers
+- **Small ore indicators** — GregTech places single surface-level ore blocks ("placer ores") near large veins as hints; these are not the vein itself but indicate one is nearby
+
+<Tip>
+VisualProspecting automatically marks vein locations on your JourneyMap when you find them. On multiplayer servers, vein data is shared between players, so check your map before drilling a new area — a teammate may have already charted the veins nearby.
+</Tip>
+
+### Mining strategy
+
+Given the vein structure, the most efficient approach is to mine in a grid pattern at the correct depth for the ores you need, rather than digging randomly. Each ore type has a specific Y-level range where it spawns. Consult NEI or the questbook for the target depths, then mine horizontal tunnels at that level spaced about 8–10 chunks apart until you intersect a vein.

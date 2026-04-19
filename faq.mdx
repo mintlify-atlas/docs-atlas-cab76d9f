@@ -1,0 +1,126 @@
+---
+title: "GT New Horizons — Frequently Asked Questions (FAQ)"
+description: "Answers to common questions about GT New Horizons: Java version, playtime, multiplayer, launchers, crash fixes, recipe lookup, and bug reporting."
+---
+
+GT New Horizons generates a lot of questions — it is a large, complex pack with over 200 mods, a decade of development history, and a reputation that precedes it. This page answers the questions that come up most often. If your question is not here, the [GTNH Wiki](https://wiki.gtnewhorizons.com/wiki/Main_Page) and the [Discord server](https://discord.gg/gtnh) are the next best resources.
+
+<AccordionGroup>
+  <Accordion title="What Minecraft version does GTNH use?">
+    GTNH runs on **Minecraft 1.7.10**. This version was chosen because of the depth and maturity of the modding ecosystem available for it, and because GregTech 5 — the version the pack is built around — targets 1.7.10. The pack will not run on any other Minecraft version and there are no plans to port it to a newer version.
+  </Accordion>
+
+  <Accordion title="What Java version do I need?">
+    GTNH requires **Java 8, Java 17, or Java 21**. Java 17 is the recommended choice for most players because it offers the best balance of compatibility and performance improvements over Java 8.
+
+    - **Java 8** — Works but does not benefit from newer JVM optimizations.
+    - **Java 17** — Recommended. Good performance, broadly compatible.
+    - **Java 21** — Supported but less tested; may work better on some hardware.
+
+    Make sure your launcher is configured to use the correct Java version. Using an unsupported version (such as Java 11 or Java 16) is a common cause of startup crashes. The [GTNH Wiki installation guide](https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating) covers Java configuration in detail.
+  </Accordion>
+
+  <Accordion title="How long does a GTNH playthrough take?">
+    A realistic estimate for a first playthrough to the current endgame is **several months to over a year** of regular play. Many players report playing for two or three years before reaching the final content tiers.
+
+    The pack is deliberately paced. Each technology tier introduces new machines, materials, and systems that require meaningful time to learn, build, and automate before the next tier unlocks. This is a feature, not a bug — the satisfaction of the pack comes from earning each stage of progression rather than rushing through it.
+
+    Experienced players who already know the pack deeply can complete it faster, but GTNH is not a pack you finish in a weekend.
+  </Accordion>
+
+  <Accordion title="Is GTNH beginner-friendly?">
+    It depends on what you mean by beginner.
+
+    **New to Minecraft entirely?** No. GTNH assumes you already understand vanilla Minecraft — crafting, farming, the Nether, basic combat, and survival mechanics. Start with vanilla Minecraft or a beginner modpack first.
+
+    **New to modded Minecraft?** Maybe. The questbook is an excellent introduction to how modded Minecraft works, and it guides you through every system step by step. Players who are new to mods but patient and willing to read quest text can absolutely learn GTNH from scratch.
+
+    **Experienced with other expert packs?** Yes. If you have played packs like SevTech Ages, Omnifactory, or Enigmatica 6 Expert, you are well-prepared for GTNH. It is harder and longer than most, but the structure and logic will be familiar.
+  </Accordion>
+
+  <Accordion title="Can I play multiplayer?">
+    Yes. Multiplayer is fully supported. There are several categories of server available:
+
+    - **Official GTNH servers** — Whitelisted EU servers run by the pack team. Apply through the [GTNH website](https://www.gtnewhorizons.com/) or by typing `!apply` in the [Discord](https://discord.gg/gtnh).
+    - **Community servers** — A variety of whitelisted and open servers run by the community, located in North America, Europe, and other regions. The Discord lists current community servers with connection details.
+    - **Private servers** — You can host your own server for friends using the server files available from the official downloads page.
+
+    Check the [Discord](https://discord.gg/gtnh) for the most current list of active servers, since availability changes over time.
+  </Accordion>
+
+  <Accordion title="What launcher should I use?">
+    GTNH is available on several launchers. The recommended options are:
+
+    - **Prism Launcher** — The most flexible option. Supports custom Java versions per instance, which is important for GTNH. Free and open source.
+    - **MultiMC** — Similar to Prism; the GTNH team provides a pre-configured MultiMC pack download at the official downloads page.
+    - **Technic Launcher** — Available via the Technic platform. Easy to install but less control over Java configuration.
+    - **CurseForge** — Available on CurseForge. Convenient if you already use it, but RAM and Java configuration options are more limited.
+
+    Download links and installation instructions are on the [GTNH Wiki](https://wiki.gtnewhorizons.com/wiki/Installing_and_Migrating). Do not download mods individually from the modlist — always use the official pack installer.
+  </Accordion>
+
+  <Accordion title="My game crashes on startup — what do I do?">
+    Startup crashes in GTNH almost always have one of two causes:
+
+    **Wrong Java version.** Verify your launcher is using Java 8, 17, or 21. Java 11 and Java 16 are known to cause crashes. Check your launcher's Java settings and point it to the correct installation.
+
+    **Insufficient RAM allocation.** GTNH needs at least **6 GB of RAM** allocated to run, and **8 GB or more** is recommended for a smooth experience. In most launchers this is set in the instance settings or global settings under "Maximum Memory" or "Maximum RAM allocation."
+
+    If neither fix resolves the crash, check the crash log (`crash-reports/` in your instance folder) and search the [GTNH Wiki](https://wiki.gtnewhorizons.com/wiki/Main_Page) or ask in the [Discord](https://discord.gg/gtnh) `#tech-support` channel with the crash log attached.
+  </Accordion>
+
+  <Accordion title="How do I find a specific recipe?">
+    GTNH includes **Not Enough Items (NEI)**, the standard recipe lookup tool for 1.7.10 modpacks.
+
+    - **Press R while hovering over any item** to see all recipes that produce it.
+    - **Press U while hovering over any item** to see all recipes that consume it.
+    - **Click any item shown in a quest** — The questbook integrates with NEI, so clicking a quest item opens its recipe view directly without having to open NEI manually.
+
+    For complex GregTech multi-block recipes, the NEI GT5 addon provides dedicated views for each machine type. Some recipes require specific machine tiers; NEI will show you both the recipe and the required machine.
+
+    If you cannot find a recipe in NEI, check the [GTNH Wiki](https://wiki.gtnewhorizons.com/wiki/Main_Page), which documents many recipes and machine configurations that are difficult to discover in-game.
+  </Accordion>
+
+  <Accordion title="What is the questbook?">
+    The questbook is powered by **BetterQuesting** and contains over **3500 quests** that guide you through the entire pack. It is accessible from your inventory and organized into tabs by mod system and progression stage.
+
+    The questbook is the primary guide for GTNH. Quest descriptions explain what each system does, why it matters for progression, and what you need to do next. Quests also provide practical benefits:
+
+    - Clicking any item shown in a quest opens its recipe in NEI.
+    - Completing quests rewards **loot bags** with randomized useful items and **coins** that can be traded for specific materials.
+    - Secret quests provide bonus rewards for exploration and experimentation.
+
+    You do not need to complete every quest to progress, but reading quest text carefully is the most efficient way to learn the pack.
+  </Accordion>
+
+  <Accordion title="Can I add or remove mods?">
+    This is strongly not recommended. GTNH is tightly balanced — mods are integrated with each other through thousands of recipe tweaks, progression gates, and custom scripts. Adding a mod can break recipe chains or bypass intended gates. Removing a mod can make certain crafting steps impossible if other recipes depend on it.
+
+    If a mod causes performance problems or crashes for you, ask in the [Discord](https://discord.gg/gtnh) before removing it. There may be a configuration option or known fix that avoids removing the mod entirely.
+
+    Custom mod additions are at your own risk and will not be supported by the pack team.
+  </Accordion>
+
+  <Accordion title="How do I report a bug?">
+    Bug reports should be filed on **GitHub**. The main modpack repository is at [github.com/GTNewHorizons/GT-New-Horizons-Modpack](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack). Individual mods in the pack have their own repositories under the GTNewHorizons GitHub organization.
+
+    Before reporting:
+    - Check if the issue is already filed.
+    - Reproduce it on a clean instance if possible.
+    - Include your pack version, Java version, and a crash log or description of the unexpected behavior.
+
+    For questions or informal bug discussion, the [Discord](https://discord.gg/gtnh) `#bug-reports` and `#tech-support` channels are also active.
+  </Accordion>
+
+  <Accordion title="What is the difference between official releases and nightly builds?">
+    **Official releases** are tagged, tested versions of the pack. They are the recommended choice for most players and represent a stable snapshot of pack content that has been reviewed before publishing.
+
+    **Nightly builds** are automated daily builds from the development branch. They include the latest quest additions, mod updates, recipe tweaks, and bug fixes, but they may also contain new bugs or incomplete content. Quest developers and contributors use nightly builds when working on the pack.
+
+    If you are playing casually, use the latest official release. If you want to help test new content or contribute to quest development, a nightly build is appropriate — but be prepared for occasional rough edges. Both are available from the official downloads page linked in the [GTNH Wiki](https://wiki.gtnewhorizons.com/wiki/Main_Page).
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  More detailed answers to technical questions, progression guides, and machine configurations are available on the [GTNH Wiki](https://wiki.gtnewhorizons.com/wiki/Main_Page). For real-time help, join the [Discord](https://discord.gg/gtnh) — the community is large and experienced players are usually available to help.
+</Info>

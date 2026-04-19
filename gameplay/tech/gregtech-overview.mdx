@@ -1,0 +1,85 @@
+---
+title: "GregTech in GTNH: The Core Technology"
+description: "GregTech defines every technology tier, EU power system, and multiblock machine in GTNH, forming the backbone of progression from the steam age to endgame."
+---
+
+GregTech is not simply one mod among many in GT New Horizons — it is the skeleton around which everything else is built. Every other technology mod in the pack is gated behind GregTech's progression tiers, and thousands of custom recipes ensure that even the most unrelated mods feel like they belong to the same game. From your first bronze steam boiler to plasma turbines running on exotic fuels from distant planets, GregTech defines what progress looks like in GTNH.
+
+## Energy: EU vs RF
+
+GregTech uses its own energy unit called **EU** (Energy Unit), which is distinct from the **RF** (Redstone Flux) system used by mods like Thermal Expansion. EU machines require EU-compatible cables and transformers; connecting the wrong power source to a machine will cause it to explode.
+
+<Note>
+GregTech cables act as EU-to-RF converters, allowing GT power infrastructure to feed RF-based machines from other mods. You do not need separate power lines for mod compatibility in most situations.
+</Note>
+
+The key difference between EU and RF is that EU has strict amperage and voltage rules. A cable has both a voltage limit (how many EU per packet) and an amperage limit (how many packets per tick). Exceeding either causes the cable to burn out. RF, by contrast, has no such distinction — RF is RF. This makes GregTech power infrastructure more complex but also more purposeful.
+
+## Technology tiers
+
+GregTech organises all machines and materials into voltage tiers. Each tier unlocks new machines, recipes, and capabilities. Higher tiers process materials faster, in larger parallel batches, and with access to chemicals or alloys impossible at lower tiers.
+
+| Tier | Name | Voltage (EU/t) | Example machine |
+|------|------|---------------|-----------------|
+| ULV | Ultra Low Voltage | 8 | Basic steam machines |
+| LV | Low Voltage | 32 | Macerator, Furnace |
+| MV | Medium Voltage | 128 | Electrolyzer, Chemical Reactor |
+| HV | High Voltage | 512 | Blast Furnace, Centrifuge |
+| EV | Extreme Voltage | 2,048 | Assembly Machine, Canning Machine |
+| IV | Insane Voltage | 8,192 | Fusion Reactor components |
+| LuV | Ludicrous Voltage | 32,768 | Advanced assembly lines |
+| ZPM | Zero Point Module | 131,072 | ZPM-tier processing |
+| UV | Ultimate Voltage | 524,288 | High-end multis |
+| UHV | Ultimate High Voltage | 2,097,152 | Near-endgame machines |
+| UEV | Ultimate Extreme Voltage | 8,388,608 | Late endgame |
+| UIV | Ultimate Insane Voltage | 33,554,432 | Very late endgame |
+| UXV | Ultimate Exotic Voltage | 134,217,728 | Exotic tier |
+| MAX | Maximum | 536,870,912 | Theoretical maximum |
+
+Each tier requires the previous tier's materials to craft its components, so progression is strictly sequential.
+
+## Multi-block machines
+
+Multi-block machines are structures assembled from multiple blocks — a controller block, casing blocks, hatches, and maintenance components. They are significantly more efficient than their single-block equivalents and are required for many high-tier recipes. You cannot smelt steel without the Electric Blast Furnace; you cannot crack oil without the Oil Cracking Unit.
+
+Common examples include:
+
+- **Electric Blast Furnace (EBF)** — required for smelting most metals above iron, including steel, aluminium, and titanium
+- **Distillation Tower** — separates oil and other fluids into component fractions
+- **Large Steam Turbine / Gas Turbine / Plasma Turbine** — high-output power generation
+- **Assembly Line** — required for crafting high-tier components not possible in a crafting table
+- **Cleanroom** — an enclosed environment required for circuit assembly at higher tiers
+
+<Columns cols={2}>
+  <Card title="Power Systems" icon="bolt" href="/gameplay/tech/power-systems">
+    How EU is generated, stored, and distributed across your base at every tier.
+  </Card>
+  <Card title="Ore Processing" icon="pickaxe" href="/gameplay/tech/ore-processing">
+    Multi-step ore processing chains that multiply material output.
+  </Card>
+  <Card title="Automation" icon="cog" href="/gameplay/tech/automation">
+    Item transport, digital storage, and factory-scale logistics.
+  </Card>
+  <Card title="Progression Tiers" icon="arrow-up" href="/gameplay/tech/gregtech-overview">
+    The full technology tier ladder from LV to MAX and what each unlocks.
+  </Card>
+</Columns>
+
+## Single-block machines
+
+Before multi-block structures are accessible, single-block machines handle most early-game processing. They are less efficient and slower but require no structural assembly.
+
+Common single-block machines include:
+
+- **Macerator** — grinds ores and materials into dust
+- **Centrifuge** — separates mixed dusts and fluids into components
+- **Electrolyzer** — breaks compounds into elements using electricity
+- **Chemical Reactor** — combines chemicals to produce new compounds
+- **Thermal Centrifuge** — further processes crushed ore for bonus byproducts
+- **Ore Washer** — washes crushed ore to remove impurities and recover additional dust
+
+## Recipe complexity
+
+GregTech adds thousands of custom recipes that connect mods which would otherwise have no relation to each other. Plastic is needed for circuits; circuits are needed for automation; automation is needed to run the machines that make plastic. The pack has over a decade of recipe tweaks ensuring that nothing exists in isolation — every material has a purpose and every mod has a place in the chain.
+
+Nearly every item that can be macerated, centrifuged, or chemically processed has a defined recipe path. Consulting Not Enough Items (NEI) for recipes is essential, and the in-game questbook with over 3,500 quests provides guided paths through the more complex processing lines.
